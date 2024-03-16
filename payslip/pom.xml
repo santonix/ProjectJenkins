@@ -14,6 +14,7 @@
       <id>build-with-tests</id>
       <build>
         <plugins>
+          <!-- Surefire Plugin for unit tests -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
@@ -22,6 +23,7 @@
               <!-- Specify test configurations here -->
             </configuration>
           </plugin>
+          <!-- Failsafe Plugin for integration tests -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
@@ -41,11 +43,29 @@
               </execution>
             </executions>
           </plugin>
+          <!-- Javadoc Plugin for generating Javadoc -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+              <!-- Specify Javadoc generation configurations here -->
+            </configuration>
+            <executions>
+              <execution>
+                <id>generate-javadoc</id>
+                <goals>
+                  <goal>javadoc</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
       </build>
     </profile>
   </profiles>
   
+  <!-- Dependencies -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -55,8 +75,10 @@
     </dependency>
   </dependencies>
   
+  <!-- Build configuration -->
   <build>
     <plugins>
+      <!-- Compiler Plugin for Java compilation -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -66,6 +88,7 @@
           <target>1.7</target>
         </configuration>
       </plugin>
+      <!-- Surefire Plugin configuration -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>

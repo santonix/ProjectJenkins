@@ -4,7 +4,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     tools {
-        jdk 'jdk17'
+        jdk 'jdk8'
         maven 'maven3'
     }
     triggers {

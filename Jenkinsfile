@@ -18,7 +18,7 @@ pipeline {
         }
         stage('build && test') {
             steps {
-                sh 'mvn clean verify -DskipITs=true'
+                sh 'mvn clean install && mvn clean verify '
             }
         }
     }

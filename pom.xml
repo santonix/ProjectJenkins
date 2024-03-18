@@ -24,13 +24,29 @@
           <version>2.19</version>
         </plugin>
 	<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.1.1</version>
+          <executions>
+            <execution>
+               <id>attach-javadocs</id>
+               <goals>
+                  <goal>javadoc</goal> <!-- Correct goal for generating Javadoc -->
+               </goals>
+            </execution>
+          </executions>
+        </plugin>
+      
+	  
+	<plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <version>3.3.1</version> <!-- Or the version you prefer -->
             <configuration>
                 <!-- Add any configuration specific to the Maven War Plugin here -->
             </configuration>
-        </plugin>      
+        </plugin>
+	   
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>

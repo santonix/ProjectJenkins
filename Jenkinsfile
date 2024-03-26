@@ -18,6 +18,7 @@ pipeline {
         }
         stage('build && test') {
             steps {
+                sh 'cd paylip '
                 sh 'mvn clean install && mvn clean verify '
             }
         }
